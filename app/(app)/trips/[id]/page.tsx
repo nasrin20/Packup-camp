@@ -43,7 +43,7 @@ export default function TripDetailPage() {
       setMyRequest(req)
     }
     load()
-  }, [id])
+  }, [id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleJoinRequest() {
     setLoading(true)

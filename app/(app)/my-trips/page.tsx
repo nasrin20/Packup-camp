@@ -35,7 +35,7 @@ export default function MyTripsPage() {
       setPending(pendingData || [])
     }
     load()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleRequest(requestId: string, status: 'approved' | 'declined') {
     await fetch(`/api/join-requests/${requestId}`, {
@@ -111,7 +111,7 @@ export default function MyTripsPage() {
                   <p className="text-forest-500 text-xs">{req.requester?.location || 'Australia'} · {req.requester?.experience_level || 'Any level'}</p>
                 </div>
               </div>
-              {req.message && <p className="text-forest-400 text-sm italic">"{req.message}"</p>}
+              {req.message && <p className="text-forest-400 text-sm italic">&ldquo;{req.message}&rdquo;</p>}
               <div className="flex gap-2">
                 <Button size="sm" onClick={() => handleRequest(req.id, 'approved')} className="flex-1">✓ Approve</Button>
                 <Button size="sm" variant="ghost" onClick={() => handleRequest(req.id, 'declined')} className="flex-1">Decline</Button>

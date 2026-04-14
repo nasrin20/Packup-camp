@@ -21,7 +21,7 @@ export default function NotificationsPage() {
     supabase.auth.getUser().then(({ data: { user } }) => {
       if (user) setUserId(user.id)
     })
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const { notifications, unreadCount, markAllRead } = useNotifications(userId)
 
@@ -41,7 +41,7 @@ export default function NotificationsPage() {
             <div className="text-5xl mb-4">🔔</div>
             <p className="text-forest-400 font-semibold">No notifications yet</p>
             <p className="text-forest-600 text-sm mt-1">
-              You'll be notified when someone joins your trip or approves your request
+              You&apos;ll be notified when someone joins your trip or approves your request
             </p>
           </div>
         ) : notifications.map(notif => (
