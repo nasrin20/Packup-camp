@@ -65,7 +65,7 @@ export default function ReviewsList({ userId }: { userId: string }) {
             </div>
           </div>
           {review.comment && (
-            <p className="text-forest-400 text-sm leading-relaxed italic">"{review.comment}"</p>
+            <p className="text-forest-400 text-sm leading-relaxed italic">&ldquo;{review.comment}&rdquo;</p>
           )}
         </div>
       ))}

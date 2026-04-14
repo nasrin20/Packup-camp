@@ -30,7 +30,7 @@ export default function BottomNav() {
       setUnread(count || 0)
     }
     loadUnread()
-  }, [pathname]) // refresh on route change
+  }, [pathname]) // eslint-disable-line react-hooks/exhaustive-deps // refresh on route change
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-forest-900 border-t border-forest-800 z-50">
